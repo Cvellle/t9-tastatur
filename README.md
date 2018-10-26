@@ -1,1 +1,5 @@
-# t9-tastatur
+download
+
+npm install
+
+npm start
