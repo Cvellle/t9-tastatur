@@ -9,11 +9,15 @@ const Header = props => {
   return (
     <header className="App-header">
       <nav className="nav" >
-        <NavLink replace={true} to="/">Home</NavLink>{' '}
-        <NavLink to="/about">About</NavLink>
+      <span className="">Switch:</span> 
+        <NavLink replace={true} id="home" to="/" onClick={e=>e.target.parentNode.nextElementSibling.style.display="block"}>T9 typing</NavLink>{' '}
+        <NavLink to="/Qwerty" id="qwerty" onClick={e=>e.target.parentNode.nextElementSibling.style.display="none"}>Qwerty to T9</NavLink>
       </nav>
-      Show a specific number: 
-      <input className="search" onChange={e => props.filterNumbers(e.target.value)} />
+      <div>
+        Show a specific number: 
+        <input className="search" onChange={e => props.filterNumbers(e.target.value)}/>
+      </div>
+   
     </header>
   )
 }
