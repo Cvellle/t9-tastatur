@@ -45,7 +45,6 @@ class Number extends React.Component {
     }
 
 
-
     if (e.target.dataset.name.length>3) {
       if (i == 1) {
         arr.push(e.target.dataset.name.charAt(0));
@@ -62,14 +61,29 @@ class Number extends React.Component {
       }
     }
 
-    if (called) {
+
+  if (called && e.target.dataset.name.length <= 3) {
 
       setTimeout(function() {
         document.querySelector("#res").innerHTML += arr.pop();
-        setTimeout(function() { j=0; }, 300);
+        setTimeout(function() { j=0; }, 50);
         inside = false;
         i = 0;
-      }, 500);
+      }, 400);
+      
+
+      called = false;
+    }  
+    
+  if (called && e.target.dataset.name.length > 3) {
+
+      setTimeout(function() {
+        document.querySelector("#res").innerHTML += arr.pop();
+        setTimeout(function() { j=0; }, 500);
+        inside = false;
+        i = 0;
+      }, 700);
+      
 
       called = false;
     }  
