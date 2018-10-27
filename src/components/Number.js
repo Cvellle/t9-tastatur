@@ -66,10 +66,10 @@ class Number extends React.Component {
 
       setTimeout(function() {
         document.querySelector("#res").innerHTML += arr.pop();
-        setTimeout(function() { j=0; }, 200);
+        setTimeout(function() { j=0; }, 300);
         inside = false;
         i = 0;
-      }, 800);
+      }, 500);
 
       called = false;
     }  
