@@ -5,17 +5,17 @@ import './number.css'
 
 let i = 0;
 let j = 0; 
-var inside = false;
-var arr =[];
+let inside = false;
+let arr =[];
 
 class Number extends React.Component {
 
   moveIn() {
-    var inside= true;
+    inside= true;
 }
 
   moveOut() {
-    var inside = false;
+    inside = false;
     i = 0;
 }
 
@@ -25,7 +25,7 @@ class Number extends React.Component {
 
    e.stopPropagation();
 
-   var called = false;
+   let called = false;
   
     if (j == 1) {
       called = true;
