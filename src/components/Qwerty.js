@@ -104,8 +104,9 @@ class Qwerty extends React.Component {
     }
 
      if (e.keyCode == 8) {
-      document.querySelector('#inp').value = document.querySelector('#inp').value.slice(0,-1);
       document.querySelector('#codes').value = document.querySelector('#codes').value.slice(0,-6);
+      let inp = document.querySelector('#inp').value = document.querySelector('#inp').value;
+      inp.slice(0,-1);
   }
     
   }

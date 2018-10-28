@@ -6,9 +6,28 @@ import './number.css'
 let i = 0;
 let j = 0; 
 let inside = false;
-let arr =[];
+
 
 class Number extends React.Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+      arr: []
+    };
+
+    this.paste = this.paste.bind(this);
+    this.moveIn = this.moveIn.bind(this);
+    this.moveOut = this.moveOut.bind(this);
+
+  }
+
+  componentDidMount() {
+    
+  }
+
 
   moveIn() {
     inside= true;
@@ -22,6 +41,7 @@ class Number extends React.Component {
   paste(e) {
     i += 1;
     j += 1;
+    
 
    e.stopPropagation();
 
@@ -33,58 +53,64 @@ class Number extends React.Component {
 
     if (e.target.dataset.name.length<=3) {
       if (i == 1) {
-        arr.push(e.target.dataset.name.charAt(0));
+        this.state.arr.push(e.target.dataset.name.charAt(0));
         }  
       if (i == 2) {
-        arr.push(e.target.dataset.name.charAt(1));
+        this.state.arr.push(e.target.dataset.name.charAt(1));
         }  
       if (i == 3) {
         i = 0;
-        arr.push(e.target.dataset.name.charAt(2));
+        this.state.arr.push(e.target.dataset.name.charAt(2));
         }
     }
 
 
     if (e.target.dataset.name.length>3) {
       if (i == 1) {
-        arr.push(e.target.dataset.name.charAt(0));
+        this.state.arr.push(e.target.dataset.name.charAt(0));
       }  
       if (i == 2) {
-        arr.push(e.target.dataset.name.charAt(1));
+        this.state.arr.push(e.target.dataset.name.charAt(1));
       }
       if (i == 3) {
-        arr.push(e.target.dataset.name.charAt(2));
+        this.state.arr.push(e.target.dataset.name.charAt(2));
       }
       if (i == 4) {
         i = 0;
-        arr.push(e.target.dataset.name.charAt(3));
+        this.state.arr.push(e.target.dataset.name.charAt(3));
       }
     }
 
 
   if (called && e.target.dataset.name.length <= 3) {
 
-      setTimeout(function() {
-        document.querySelector("#res").innerHTML += arr.pop();
-        setTimeout(function() { j=0; }, 50);
-        inside = false;
-        i = 0;
-      }, 400);
-      
+    function write1() {    
+      console.log(this)
+      document.querySelector("#res").innerHTML += this.state.arr.pop();
+      setTimeout(
+          function() { j=0; }, 50);
+      inside = false;
+         i = 0;
+       }
 
+      setTimeout(write1.bind(this), 400);
+      
       called = false;
     }  
     
   if (called && e.target.dataset.name.length > 3) {
 
-      setTimeout(function() {
-        document.querySelector("#res").innerHTML += arr.pop();
-        setTimeout(function() { j=0; }, 500);
-        inside = false;
-        i = 0;
-      }, 700);
-      
+    function write2() {    
+      console.log(this)
+      document.querySelector("#res").innerHTML += this.state.arr.pop();
+      setTimeout(
+          function() { j=0; }, 500);
+      inside = false;
+         i = 0;
+       }
 
+      setTimeout(write2.bind(this), 700);
+      
       called = false;
     }  
 
@@ -101,4 +127,5 @@ class Number extends React.Component {
     )
   }
 }
+
 export default Number

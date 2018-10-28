@@ -1,6 +1,7 @@
 import {
   SET_LOADING,
   SET_NUMBERS,
+  SET_OUTPUT,
   SET_FILTERED,
   FILTER_NUMBERS
 } from './actionNames';
@@ -28,3 +29,4 @@ export const filterNumbers = code => ({
   type: FILTER_NUMBERS,
   code,
 })
+
