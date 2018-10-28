@@ -1,7 +1,8 @@
 const initialState = {
   loading: false,
   numbers: [],
-  filtered: []
+  filtered: [],
+  output:[]
 }
 
 export const reducer = (state = initialState, action) => {
@@ -10,12 +11,14 @@ export const reducer = (state = initialState, action) => {
       return { ...state, loading: action.loading }
     case 'SET_NUMBERS':
       return { ...state, numbers: action.numbers}
+    case 'SET_OUTPUT':
+      return { ...state, output: action.output}
     case 'SET_FILTERED':
       return { ...state, filtered: action.filtered}
     case 'FILTER_NUMBERS':
       const filtered = state.numbers.filter(num => num.code.includes(action.code))
-      return { ...state, filtered }
 
+      return { ...state, filtered }
     default:
       return state
   }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import ReactDOM from 'react-dom';
 import './number.css'
 
@@ -19,8 +18,6 @@ class Number extends React.Component {
     };
 
     this.paste = this.paste.bind(this);
-    this.moveIn = this.moveIn.bind(this);
-    this.moveOut = this.moveOut.bind(this);
 
   }
 
@@ -47,18 +44,18 @@ class Number extends React.Component {
 
    let called = false;
   
-    if (j == 1) {
+    if (j === 1) {
       called = true;
     }
 
     if (e.target.dataset.name.length<=3) {
-      if (i == 1) {
+      if (i === 1) {
         this.state.arr.push(e.target.dataset.name.charAt(0));
         }  
-      if (i == 2) {
+      if (i === 2) {
         this.state.arr.push(e.target.dataset.name.charAt(1));
         }  
-      if (i == 3) {
+      if (i === 3) {
         i = 0;
         this.state.arr.push(e.target.dataset.name.charAt(2));
         }
@@ -66,16 +63,16 @@ class Number extends React.Component {
 
 
     if (e.target.dataset.name.length>3) {
-      if (i == 1) {
+      if (i === 1) {
         this.state.arr.push(e.target.dataset.name.charAt(0));
       }  
-      if (i == 2) {
+      if (i === 2) {
         this.state.arr.push(e.target.dataset.name.charAt(1));
       }
-      if (i == 3) {
+      if (i === 3) {
         this.state.arr.push(e.target.dataset.name.charAt(2));
       }
-      if (i == 4) {
+      if (i === 4) {
         i = 0;
         this.state.arr.push(e.target.dataset.name.charAt(3));
       }
@@ -85,7 +82,6 @@ class Number extends React.Component {
   if (called && e.target.dataset.name.length <= 3) {
 
     function write1() {    
-      console.log(this)
       document.querySelector("#res").innerHTML += this.state.arr.pop();
       setTimeout(
           function() { j=0; }, 50);
@@ -101,7 +97,6 @@ class Number extends React.Component {
   if (called && e.target.dataset.name.length > 3) {
 
     function write2() {    
-      console.log(this)
       document.querySelector("#res").innerHTML += this.state.arr.pop();
       setTimeout(
           function() { j=0; }, 500);
@@ -121,7 +116,6 @@ class Number extends React.Component {
     return (
       <div onClick={this.selecteMe}>
         <button  id="add" onClick={this.paste} onMouseOut={this.moveOut} className="add" data-name={this.props.num.name}>{this.props.num.code}</button>
-        <div id="show"></div> 
         <p id="code">{this.props.num.name}</p>
       </div>
     )
