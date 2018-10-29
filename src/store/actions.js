@@ -1,8 +1,7 @@
 import {
   SET_LOADING,
-  SET_NUMBERS,
   SET_FILTERED,
-  FILTER_NUMBERS
+  SET_OUTPUT,
 } from './actionNames';
 
 export const setLoading = loading => {
@@ -12,11 +11,6 @@ export const setLoading = loading => {
   }
 }
 
-export const setNumbers = numbers => ({
-  type: SET_NUMBERS,
-  numbers,
-})
-
 export const setFiltered = filtered => {
   return {
     type: SET_FILTERED,
@@ -24,10 +18,11 @@ export const setFiltered = filtered => {
   }
 }
 
-export const filterNumbers = code => ({
-  type: FILTER_NUMBERS,
-  code,
+export const setOutput = output => ({
+  type: SET_OUTPUT,
+  output,
 })
+
 
 
 

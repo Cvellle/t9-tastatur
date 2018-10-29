@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { HashRouter as Router, Route } from 'react-router-dom'
-import {setLoading, setNumbers, setFiltered} from './store/actions'
+import {setLoading, setFiltered} from './store/actions'
 import Header from './components/Header'
 import MainScreen from './components/MainScreen'
 import Qwerty from './components/Qwerty'
@@ -14,7 +14,6 @@ class App extends Component {
     .then(data => data.json())
     .then(data => {
       this.props.setLoading(false)
-      this.props.setNumbers(data)
       this.props.setFiltered(data)
     })
   }
@@ -36,6 +35,6 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = {setLoading, setNumbers, setFiltered}
+const mapDispatchToProps = {setLoading, setFiltered}
 
 export default connect(null, mapDispatchToProps)(App)

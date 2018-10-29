@@ -16,7 +16,7 @@ class Qwerty extends React.Component {
   }
 
   componentDidMount() {
-    document.querySelector('.search').parentNode.style.display="none";
+    
   }
 
   combine(e) {

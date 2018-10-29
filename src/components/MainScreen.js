@@ -11,7 +11,8 @@ const MainScreen = props => {
   )
 
   const trim = function(e) {
-      e.target.previousElementSibling.innerHTML = e.target.previousElementSibling.innerHTML.slice(0,-1)
+      e.target.previousElementSibling.innerHTML = e.target.previousElementSibling.innerHTML.slice(0,-1);
+      console.log(props.output);
   }
 
   return (
@@ -27,8 +28,8 @@ const MainScreen = props => {
   )
 }
 
-const mapStateToProps = ({filtered, loading}) => {
-  return {filtered, loading}
+const mapStateToProps = ({filtered, loading, output}) => {
+  return {filtered, loading, output}
 }
 
 export default connect(mapStateToProps)(MainScreen)

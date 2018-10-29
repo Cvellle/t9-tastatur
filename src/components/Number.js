@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import './number.css'
+import {connect} from 'react-redux'
+import {setOutput} from '../store/actions'
 
 let i = 0;
 let j = 0; 
@@ -13,16 +15,8 @@ class Number extends React.Component {
 
     super(props);
 
-    this.state = {
-      arr: []
-    };
-
     this.paste = this.paste.bind(this);
 
-  }
-
-  componentDidMount() {
-    
   }
 
 
@@ -38,7 +32,7 @@ class Number extends React.Component {
   paste(e) {
     i += 1;
     j += 1;
-    
+    this.props.setOutput(["2"]);
 
    e.stopPropagation();
 
@@ -50,31 +44,31 @@ class Number extends React.Component {
 
     if (e.target.dataset.name.length<=3) {
       if (i === 1) {
-        this.setState({arr: e.target.dataset.name.charAt(0)});
+        this.props.setOutput([e.target.dataset.name.charAt(0)]);
         }  
       if (i === 2) {
-        this.setState({arr: e.target.dataset.name.charAt(1)});
+        this.props.setOutput([e.target.dataset.name.charAt(1)]);
         }  
       if (i === 3) {
         i = 0;
-        this.setState({arr: e.target.dataset.name.charAt(2)});
+        this.props.setOutput([e.target.dataset.name.charAt(2)]);
         }
     }
 
 
     if (e.target.dataset.name.length>3) {
       if (i === 1) {
-        this.setState({arr: e.target.dataset.name.charAt(0)});
+        this.props.setOutput([e.target.dataset.name.charAt(0)]);
       }  
       if (i === 2) {
-        this.setState({arr: e.target.dataset.name.charAt(1)});
+        this.props.setOutput([e.target.dataset.name.charAt(1)]);
       }
       if (i === 3) {
-        this.setState({arr: e.target.dataset.name.charAt(2)});
+        this.props.setOutput([e.target.dataset.name.charAt(2)]);
       }
       if (i === 4) {
         i = 0;
-        this.setState({arr: e.target.dataset.name.charAt(3)});
+        this.props.setOutput([e.target.dataset.name.charAt(3)]);
       }
     }
 
@@ -82,7 +76,7 @@ class Number extends React.Component {
   if (called && e.target.dataset.name.length <= 3) {
 
     function write1() {    
-      document.querySelector("#res").innerHTML += this.state.arr;
+      document.querySelector("#res").innerHTML += this.props.output;
       this.setState({arr: []});
       setTimeout(
           function() { j=0; }, 50);
@@ -98,7 +92,7 @@ class Number extends React.Component {
   if (called && e.target.dataset.name.length > 3) {
 
     function write2() {    
-      document.querySelector("#res").innerHTML += this.state.arr;
+      document.querySelector("#res").innerHTML += this.props.output;
       this.setState({arr: []});
       setTimeout(
           function() { j=0; }, 500);
@@ -124,4 +118,15 @@ class Number extends React.Component {
   }
 }
 
-export default Number
+
+
+const mapStateToProps = ({filtered, output}) => {
+  return {filtered, output}
+}
+
+const mapDispatchToProps = { setOutput }
+
+// export default connect(mapStateToProps)(Number)
+export default connect(mapStateToProps, mapDispatchToProps)(Number)
+
+// export default Number
