@@ -84,7 +84,6 @@ class Number extends React.Component {
     function write1() {    
       document.querySelector("#res").innerHTML += this.state.arr;
       this.setState({arr: []});
-      console.log(this.state.arr)
       setTimeout(
           function() { j=0; }, 50);
       inside = false;
