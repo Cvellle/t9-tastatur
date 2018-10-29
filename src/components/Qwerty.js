@@ -4,7 +4,15 @@ import ReactDOM from 'react-dom'
 class Qwerty extends React.Component {
 
   constructor(props) {
-    super(props)
+
+    super(props);
+
+    this.state = {
+      output: []
+    };
+
+    this.combine = this.combine.bind(this);
+
   }
 
   componentDidMount() {
@@ -13,101 +21,133 @@ class Qwerty extends React.Component {
 
   combine(e) {
     if (e.keyCode === 188) {
-      document.querySelector('#codes').value += "1   , ";
+      this.state.output.push("  1");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 190) {
-      document.querySelector('#codes').value += "11  , ";
+      this.state.output.push("  11");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 49) {
-      document.querySelector('#codes').value += "111 , ";
+      this.state.output.push("  111 ");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 65) {
-      document.querySelector('#codes').value += "2   , ";
+      this.state.output.push("  2");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 66) {
-      document.querySelector('#codes').value += "22  , ";
+      this.state.output.push("  22 ");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 67) {
-      document.querySelector('#codes').value += "222 , ";
+      this.state.output.push("  222");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 68) {
-      document.querySelector('#codes').value += "3   , ";
+      this.state.output.push("  3");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 69) {
-      document.querySelector('#codes').value += "33  , ";
+      this.state.output.push("  33");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 70) {
-      document.querySelector('#codes').value += "333 , ";
+      this.state.output.push("  333");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 71) {
-      document.querySelector('#codes').value += "4   , ";
+      this.state.output.push("  4");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 72) {
-      document.querySelector('#codes').value += "44  , ";
+      this.state.output.push("  44");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 73) {
-      document.querySelector('#codes').value += "444 , ";
+      this.state.output.push("  444");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 74) {
-      document.querySelector('#codes').value += "5   , ";
+      this.state.output.push("  5");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 75) {
-      document.querySelector('#codes').value += "55  , ";
+      this.state.output.push("  55");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 76) {
-      document.querySelector('#codes').value += "555 , ";
+      this.state.output.push("  555");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 77) {
-      document.querySelector('#codes').value += "6   , ";
+      this.state.output.push("  6");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 78) {
-      document.querySelector('#codes').value += "66  , ";
+      this.state.output.push("  66");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 79) {
-      document.querySelector('#codes').value += "666 , ";
+      this.state.output.push("  666");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 80) {
-      document.querySelector('#codes').value += "7   , ";
+      this.state.output.push("  7");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 81) {
-      document.querySelector('#codes').value += "77  , ";
+      this.state.output.push("  77");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 82) {
-      document.querySelector('#codes').value += "777 , ";
+      this.state.output.push("  777");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 83) {
-      document.querySelector('#codes').value += "7777, ";
+      this.state.output.push("  7777");
+      document.querySelector('#codes').value = this.state.output;
     }
       if (e.keyCode === 84) {
-      document.querySelector('#codes').value += "8   , ";
+      this.state.output.push("  8");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 85) {
-      document.querySelector('#codes').value += "88  , ";
+      this.state.output.push("  88");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 86) {
-      document.querySelector('#codes').value += "888 , ";
+      this.state.output.push("  888");
+      document.querySelector('#codes').value = this.state.output;
     }
      if (e.keyCode === 87) {
-      document.querySelector('#codes').value += "9   , ";
+      this.state.output.push("  9");
+      document.querySelector('#codes').value = this.state.output;
     }
      if (e.keyCode === 88) {
-      document.querySelector('#codes').value += "99  , ";
+      this.state.output.push("  99");
+      document.querySelector('#codes').value = this.state.output;
     }
     if (e.keyCode === 89) {
-      document.querySelector('#codes').value += "999 , ";
+      this.state.output.push("  999");
+      document.querySelector('#codes').value = this.state.output;
     }
      if (e.keyCode === 90) {
-      document.querySelector('#codes').value += "9999, ";
+      this.state.output.push("  9999");
+      document.querySelector('#codes').value = this.state.output;
     }
      if (e.keyCode === 32) {
-      document.querySelector('#codes').value += "48  , ";
+      this.state.output.push("  0");
+      document.querySelector('#codes').value = this.state.output;
     }
 
      if (e.keyCode === 8) {
-      document.querySelector('#codes').value = document.querySelector('#codes').value.slice(0,-6);
+      // document.querySelector('#codes').value = this.state.output[this.state.output.length-1];
+      this.state.output.pop();
+      document.querySelector('#codes').value = this.state.output;
       let inp = document.querySelector('#inp').value = document.querySelector('#inp').value;
       inp.slice(0,-1);
-  }
+    }
     
   }
 

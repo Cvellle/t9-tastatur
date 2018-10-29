@@ -50,31 +50,31 @@ class Number extends React.Component {
 
     if (e.target.dataset.name.length<=3) {
       if (i === 1) {
-        this.state.arr.push(e.target.dataset.name.charAt(0));
+        this.setState({arr: e.target.dataset.name.charAt(0)});
         }  
       if (i === 2) {
-        this.state.arr.push(e.target.dataset.name.charAt(1));
+        this.setState({arr: e.target.dataset.name.charAt(1)});
         }  
       if (i === 3) {
         i = 0;
-        this.state.arr.push(e.target.dataset.name.charAt(2));
+        this.setState({arr: e.target.dataset.name.charAt(2)});
         }
     }
 
 
     if (e.target.dataset.name.length>3) {
       if (i === 1) {
-        this.state.arr.push(e.target.dataset.name.charAt(0));
+        this.setState({arr: e.target.dataset.name.charAt(0)});
       }  
       if (i === 2) {
-        this.state.arr.push(e.target.dataset.name.charAt(1));
+        this.setState({arr: e.target.dataset.name.charAt(1)});
       }
       if (i === 3) {
-        this.state.arr.push(e.target.dataset.name.charAt(2));
+        this.setState({arr: e.target.dataset.name.charAt(2)});
       }
       if (i === 4) {
         i = 0;
-        this.state.arr.push(e.target.dataset.name.charAt(3));
+        this.setState({arr: e.target.dataset.name.charAt(3)});
       }
     }
 
@@ -82,7 +82,9 @@ class Number extends React.Component {
   if (called && e.target.dataset.name.length <= 3) {
 
     function write1() {    
-      document.querySelector("#res").innerHTML += this.state.arr.pop();
+      document.querySelector("#res").innerHTML += this.state.arr;
+      this.setState({arr: []});
+      console.log(this.state.arr)
       setTimeout(
           function() { j=0; }, 50);
       inside = false;
@@ -97,7 +99,8 @@ class Number extends React.Component {
   if (called && e.target.dataset.name.length > 3) {
 
     function write2() {    
-      document.querySelector("#res").innerHTML += this.state.arr.pop();
+      document.querySelector("#res").innerHTML += this.state.arr;
+      this.setState({arr: []});
       setTimeout(
           function() { j=0; }, 500);
       inside = false;
