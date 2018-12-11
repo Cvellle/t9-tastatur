@@ -203,7 +203,6 @@
   transition:0.1s;
 }
 
-
 #trim:focus {
   outline:none;
 }
@@ -218,6 +217,11 @@
   -webkit-filter: brightness(1.1);
   transition:0.3s;
 }
+
+
+
+
+
 
 
 
