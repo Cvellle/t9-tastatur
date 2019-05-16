@@ -10,7 +10,7 @@ import './App.css'
 class App extends Component {
   componentDidMount() {
     this.props.setLoading(true)
-    fetch('https://api.myjson.com/bins/vszxu')
+    fetch('http://api.myjson.com/bins/vszxu')
     .then(data => data.json())
     .then(data => {
       this.props.setLoading(false)
