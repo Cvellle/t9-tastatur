@@ -11,7 +11,7 @@ class App extends Component {
   componentDidMount() {
     this.props.setLoading(true)
     //fetch('http://api.myjson.com/bins/vszxu')
-    fetch('http://www.json-generator.com/api/json/get/bUcKBujHuG?indent=2')
+    fetch('https://www.json-generator.com/api/json/get/bUcKBujHuG?indent=2')
     .then(data => data.json())
     .then(data => {
       this.props.setLoading(false)
