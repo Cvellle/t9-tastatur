@@ -1,0 +1,62 @@
+[
+  {
+    "code": 1, 
+    "id": 1, 
+    "name": ",.!"
+  }, 
+  {
+    "code": 2, 
+    "id": 2, 
+    "name": "abc"
+  }, 
+  {
+    "code": 3, 
+    "id": 3, 
+    "name": "def"
+  }, 
+  {
+    "code": 4, 
+    "id": 4, 
+    "name": "ghi"
+  }, 
+  {
+    "code": 5, 
+    "id": 5, 
+    "name": "jkl"
+  }, 
+  {
+    "code": 6, 
+    "id": 6, 
+    "name": "mno"
+  }, 
+  {
+    "code": 7, 
+    "id": 7, 
+    "name": "pqrs"
+  }, 
+  {
+    "code": 8, 
+    "id": 8, 
+    "name": "tuv"
+  }, 
+  {
+    "code": 9, 
+    "id": 9, 
+    "name": "wxyz"
+  }, 
+  {
+    "code": "*", 
+    "id": 10, 
+    "name": "*"
+  }, 
+  {
+    "code": 0, 
+    "id": 11, 
+    "name": " "
+  }, 
+  {
+    "code": "#", 
+    "id": 12, 
+    "name": "#"
+  }
+]
