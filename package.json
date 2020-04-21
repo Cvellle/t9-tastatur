@@ -2,8 +2,8 @@
   "name": "t9-Combinations",
   "version": "0.1.0",
   "private": false,
-  "repository": "",
-  "homepage": "",
+  "repository": "https://github.com/Cvellle/t9-tastatur",
+  "homepage": "https://cvellle.github.io/t9-tastatur/",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",

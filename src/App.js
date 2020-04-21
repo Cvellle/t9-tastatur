@@ -10,8 +10,8 @@ import './App.css'
 class App extends Component {
   componentDidMount() {
     this.props.setLoading(true)
-    //fetch('http://api.myjson.com/bins/vszxu')
-    fetch('https://www.json-generator.com/api/json/get/bUcKBujHuG?indent=2')
+    // fetch('https://www.json-generator.com/api/json/get/bUcKBujHuG?indent=2')
+    fetch('data/numbers.json')
     .then(data => data.json())
     .then(data => {
       this.props.setLoading(false)
