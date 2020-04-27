@@ -1,12 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 class Qwerty extends React.Component {
-
   constructor(props) {
     super(props)
   }
-
 
   combine(e) {
     if (e.keyCode == 188) {
@@ -75,7 +72,7 @@ class Qwerty extends React.Component {
     if (e.keyCode == 83) {
       document.querySelector('#codes').value += "7777, ";
     }
-      if (e.keyCode == 84) {
+    if (e.keyCode == 84) {
       document.querySelector('#codes').value += "8, ";
     }
     if (e.keyCode == 85) {
@@ -84,46 +81,43 @@ class Qwerty extends React.Component {
     if (e.keyCode == 86) {
       document.querySelector('#codes').value += "888, ";
     }
-     if (e.keyCode == 87) {
+    if (e.keyCode == 87) {
       document.querySelector('#codes').value += "9, ";
     }
-     if (e.keyCode == 88) {
+    if (e.keyCode == 88) {
       document.querySelector('#codes').value += "99, ";
     }
     if (e.keyCode == 89) {
       document.querySelector('#codes').value += "999, ";
     }
-     if (e.keyCode == 90) {
+    if (e.keyCode == 90) {
       document.querySelector('#codes').value += "9999, ";
     }
-     if (e.keyCode == 32) {
+    if (e.keyCode == 32) {
       document.querySelector('#codes').value += "48, ";
     }
-    
   }
 
   clear() {
-      document.querySelector('#codes').value = "";
+    document.querySelector('#codes').value = "";
   }
 
   trim() {
-    document.querySelector('#codes').value = document.querySelector('#codes').value.slice(0,-1);
-}
-
+    document.querySelector('#codes').value = document.querySelector('#codes').value.slice(0, -1);
+  }
 
   render() {
-
     return (
       <div>
         <h1>Qwerty</h1>
-        <input id="inp" onKeyDown={this.combine}/>
-        <button  id="comb" onClick={this.trim}>Combine</button>
-        <input id="codes" readonly="true"/><br/>
-        <button  id="clear" onClick={this.clear}>Clear</button>
+        <input id="inp" onKeyDown={this.combine} />
+        <button id="comb" onClick={this.trim}>Combine</button>
+        <input id="codes" readonly="true" /><br />
+        <button id="clear" onClick={this.clear}>Clear</button>
         <p>Add t9 code to input field on the bottom by clicking on numbers, and click "combine" button.</p>
       </div>
-      )
-    }
+    )
   }
+}
 
 export default Qwerty

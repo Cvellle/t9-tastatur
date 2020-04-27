@@ -1,22 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 class Qwerty extends React.Component {
-
   constructor(props) {
-
     super(props);
-
     this.state = {
       output: []
     };
-
     this.combine = this.combine.bind(this);
-
-  }
-
-  componentDidMount() {
-    
   }
 
   combine(e) {
@@ -108,7 +98,7 @@ class Qwerty extends React.Component {
       this.state.output.push("  7777");
       document.querySelector('#codes').value = this.state.output;
     }
-      if (e.keyCode === 84) {
+    if (e.keyCode === 84) {
       this.state.output.push("  8");
       document.querySelector('#codes').value = this.state.output;
     }
@@ -120,11 +110,11 @@ class Qwerty extends React.Component {
       this.state.output.push("  888");
       document.querySelector('#codes').value = this.state.output;
     }
-     if (e.keyCode === 87) {
+    if (e.keyCode === 87) {
       this.state.output.push("  9");
       document.querySelector('#codes').value = this.state.output;
     }
-     if (e.keyCode === 88) {
+    if (e.keyCode === 88) {
       this.state.output.push("  99");
       document.querySelector('#codes').value = this.state.output;
     }
@@ -132,23 +122,22 @@ class Qwerty extends React.Component {
       this.state.output.push("  999");
       document.querySelector('#codes').value = this.state.output;
     }
-     if (e.keyCode === 90) {
+    if (e.keyCode === 90) {
       this.state.output.push("  9999");
       document.querySelector('#codes').value = this.state.output;
     }
-     if (e.keyCode === 32) {
+    if (e.keyCode === 32) {
       this.state.output.push("  0");
       document.querySelector('#codes').value = this.state.output;
     }
 
-     if (e.keyCode === 8) {
+    if (e.keyCode === 8) {
       // document.querySelector('#codes').value = this.state.output[this.state.output.length-1];
       this.state.output.pop();
       document.querySelector('#codes').value = this.state.output;
       let inp = document.querySelector('#inp').value = document.querySelector('#inp').value;
-      inp.slice(0,-1);
+      inp.slice(0, -1);
     }
-    
   }
 
   clear() {
@@ -156,19 +145,17 @@ class Qwerty extends React.Component {
     document.querySelector('#inp').value = "";
   }
 
-
   render() {
-
     return (
       <div>
         <h1>Qwerty to t9</h1>
-        <textarea id="inp" onKeyDown={this.combine}></textarea><br/>
-        <button  id="clear" onClick={this.clear}>Clear All</button><br/>
+        <textarea id="inp" onKeyDown={this.combine}></textarea><br />
+        <button id="clear" onClick={this.clear}>Clear All</button><br />
         <textarea ut id="codes" readonly="true"></textarea>
         <p id="descr-qw">Type and see the text converted into T9 code.</p>
       </div>
-      )
-    }
+    )
   }
+}
 
 export default Qwerty

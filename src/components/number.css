@@ -9,22 +9,22 @@
 }
 
 .add {
-  cursor:pointer;
-  width:9.8rem;
-  height:5rem;
-  background:skyblue;
-  border-radius:0.5rem;
+  cursor: pointer;
+  width: 9.8rem;
+  height: 5rem;
+  background: skyblue;
+  border-radius: 0.5rem;
   font-size: 2rem;
-  border:0.3rem solid lightcyan;
+  border: 0.3rem solid lightcyan;
 }
 
 .add:focus {
-  outline:none;
+  outline: none;
 }
 
 .add:active {
-  outline:none;
-  -webkit-transform: translate(0.1rem,0.1rem);
+  outline: none;
+  -webkit-transform: translate(0.1rem, 0.1rem);
 }
 
 .add:hover {
